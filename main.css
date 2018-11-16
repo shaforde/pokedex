@@ -5,8 +5,10 @@
   height: 100vh;
   width: 100%;
 	animation: fadeIn 2s forwards;
-  /* position: absolute; */
+  position: absolute; 
   z-index: 1;
+
+
 }
 
  /* ----------------------------------------------
@@ -55,7 +57,7 @@ img #amin {
 
 .gallery {
   text-align: center;
-  z-index: 1;
+
 }
 
 #bellossom {
