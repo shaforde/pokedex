@@ -61,7 +61,18 @@ body{
   }
 
 }
+#txtbox{
+  color: red;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 6s steps(60, end);
+}
 
+@keyframes type{
+  from { width: 0; }
+}
 
 
 
