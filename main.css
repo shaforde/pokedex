@@ -61,6 +61,7 @@ body{
   }
 
 }
+/* https://stackoverflow.com/questions/33486228/how-to-fade-in-reveal-one-letter-at-a-time */
 #txtbox{
   color: red;
   font-size: 20px;
