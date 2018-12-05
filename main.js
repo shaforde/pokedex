@@ -1,17 +1,4 @@
-//
-// // function apiCall(pokemon){
-// axios.get
-// ("http://fizal.me/pokeapi/api/v2/name/.json")
-// // +pokemon+
-//
-//   .then(function (response){
-//     console.log(response);
-//    // })
-// }
-// //
-// // let test = apiCall("bulbasaur");
-//
-// // console.log(test);
+
 
 
 class Pokemon {
@@ -31,9 +18,6 @@ class Pokemon {
 }
 }
 
-
-
-
 // jigglypuff
 
 
@@ -46,118 +30,58 @@ axios.get("https://fizal.me/pokeapi/api/v2/name/jigglypuff.json")
    //this is to make the object appear on the page after clicking the div
    let nameofPokemon= document.getElementById("jigglypic");
    nameofPokemon.addEventListener("click", jigglypuff.display.bind(jigglypuff));
+   Makayla.pokemon.push(jigglypuff);
  });
 
 
-
-
-// teddiursa
-//  axios.get("http://fizal.me/pokeapi/api/v2/name/teddiursa.json")
-//   .then(function insertTeddi(response){
-//     //this console logs the value for defense
-//     console.log(response.data.stats[5].base_stat);
-//  let ac = document.getElementById("teddiursa")
-//    ac.innerHTML = "Abilities: " + response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name + ", " +  response.data.abilities[2].ability.name + " <br> Defense: " + response.data.stats[3].base_stat + "<br> Attack: " + response.data.stats[4].base_stat + "<br> HP: " + response.data.stats[5].base_stat;
-//
-// })
 axios.get("https://fizal.me/pokeapi/api/v2/name/teddiursa.json")
  .then(function (response){
    //this console logs the value for defenise
    console.log(response.data.stats);
-   let jigglypuff = new Pokemon(response.data.stats[5].base_stat,"teddiursa", response.data.stats[4].base_stat, response.data.stats[3].base_stat,  response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name + ", " +  response.data.abilities[2].ability.name);
-   // jigglypuff.display()
+   let teddiursa = new Pokemon(response.data.stats[5].base_stat,"teddiursa", response.data.stats[4].base_stat, response.data.stats[3].base_stat,  response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name + ", " +  response.data.abilities[2].ability.name);
+   // teddiursa.display()
    let nameofPokemon= document.getElementById("teddipic");
-   nameofPokemon.addEventListener("click", jigglypuff.display.bind(jigglypuff));
+   nameofPokemon.addEventListener("click", teddiursa.display.bind(teddiursa));
+   Makayla.pokemon.push(teddiursa);
 
  })
 
-// //bellossom
-// axios.get("http://fizal.me/pokeapi/api/v2/name/bellossom.json")
-//  .then(function insertBello(response){
-//    //this console logs the value for defense
-//    console.log(response.data.stats[5].base_stat);
-// let ac = document.getElementById("bellossom");
-//   ac.innerHTML = "Abilities: " + response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name + " <br> Defense: " + response.data.stats[3].base_stat + "<br> Attack: " + response.data.stats[4].base_stat + "<br> HP: " + response.data.stats[5].base_stat;
-// })
+
 axios.get("https://fizal.me/pokeapi/api/v2/name/bellossom.json")
  .then(function (response){
    //this console logs the value for defense
    console.log(response.data.stats);
-   let jigglypuff = new Pokemon(response.data.stats[5].base_stat,"bellossom", response.data.stats[4].base_stat, response.data.stats[3].base_stat,  response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name );
+   let bellossom = new Pokemon(response.data.stats[5].base_stat,"bellossom", response.data.stats[4].base_stat, response.data.stats[3].base_stat,  response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name );
    // jigglypuff.display()
    let nameofPokemon= document.getElementById("bellopic");
-   nameofPokemon.addEventListener("click", jigglypuff.display.bind(jigglypuff));
-
+   nameofPokemon.addEventListener("click", bellossom.display.bind(bellossom));
+   Makayla.pokemon.push(bellossom);
  })
 
 
-
+// Trainer code is making stats not show up
+// let pokemon=[teddiursa, jigglypuff, bellossom];
 
  class Trainer{
    constructor(){
      this.pokemon=[]
+     console.log(this.pokemon);
    }
 
    all (){
-
+     return this.pokemon;
+   }
+   store(){
+     return
    }
    get(name){
 
+     for (let i=0 ; i<this.pokemon.length; i++) {
+     if(name === this.pokemon[i].name){
+       return this.pokemon[i];
+     }
+    }
    }
  }
-// this is wrong but keep for the information
-// function insertPokemonStats() {
-//   let pokemon = {};
-//   pokemon.name
-//   pokemon.abilities
-//   pokemon.attack
-//   pokemon.defense
-//   pokemon.hp
-//
-//   = function() {
-//     innerHTML("Hi! I\'m " + pokemon.name + ". <br> Abilities: "+ pokemon.abilities+"<br> Attack: " + pokemon.attack+"<br> Defense: " + pokemon.defense"<br> HP: " + pokemon.hp);
-//
-//   return pokemon;
-// //     };
-//
-//
-// //this is correct
-// class Pokemon {
-//   constructor(hp, name, attack, defense,ability){
-//     this.name=name;
-//     this.attack=attack;
-//     this.defense=defense;
-//     this.ability=ability;
-//     this.hp = hp;
-//     this.stats= function(){this.name+"<br> Attack: " + this.attack + "<br> Defense: " + this.defense + "<br> Ability: "+ this.ability+ "<br> HP: "+this.hp
-//     }
-//   }
-//
-//   display(){
-//     let ab = document.getElementById("jigglypuff");
-//       ab.innerHTML = "Abilities: " + response.data.abilities[0].ability.name +", " + response.data.abilities[1].ability.name+", " +  response.data.abilities[2].ability.name + " <br> Defense: " + response.data.stats[3].base_stat + "<br> Attack: " + response.data.stats[4].base_stat + "<br> HP: " + response.data.stats[5].base_stat;
-//
-//   }
-//
-// }
-// let jiggly = new Pokemon(){
-//   axios.get("http://fizal.me/pokeapi/api/v2/name/jigglypuff.json")
-//    .then(function insertJiggly(response){
-//      //this console logs the value for defense
-//      // console.log(response.data.stats[5].base_stat);
-//      let jigg = new Pokemon(response.data.name)
-//      jigg.display()
-//
-//
-//
-//    })
-//
-// jiggly.innerHTML = jiggly.name, jiggly.ability, jiggly.defense, jiggly.attack, jiggly.hp}
-
-// let bello = new Pokemon()
-//
-// bello.innerHTML = bello.name, bello.ability, bello.defense, bello.attack, bello.hp
-//
-// let teddi = new Pokemon()
-//
-// teddi.innerHTML = teddi.name, teddi.ability, teddi.defense, teddi.attack, teddi.hp
+let Makayla = new Trainer();
+let jigglypuff = new Pokemon(jigglypuff)

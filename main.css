@@ -4,7 +4,7 @@ header{
 #puff-out-center {
   background-image: url("https://media.giphy.com/media/HQuZn367GgytO/giphy.gif");
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
+  background-size: cover;
   height: 100vh;
   width: 100%;
 	animation: fadeOut 2.5s forwards;
@@ -74,6 +74,9 @@ body{
 @keyframes type{
   from { width: 0; }
 }
+100%{
+  display: none;
+}
 
 
 
@@ -82,8 +85,9 @@ img #amin {
   width: 100%;
 }
 
-.gallery {
+#gallery {
   text-align: center;
+  width:65%;
 
 }
 
@@ -91,7 +95,8 @@ img #amin {
   display: inline-block;
 }
 
-#jigglypuf {
+#jigglypuff {
+  margin-left: 20px;
   display: inline-block;
 }
 
@@ -99,22 +104,30 @@ img #amin {
   display: inline-block;
 }
 
-#empty1 {
-  display: inline-block;
-  width:200px;
-  height: 204px;
+#right{
+  float:right;
+  width: 35%;
+}
+#trainer{
+  position: relative;
+width: 50%;
+z-index: 10;
+ /* top:4px;
+ left: 50px; */
+}
+ #txtbox{
+position: relative;
+text-align: center;
+float:right;
+
 }
 
-#empty2 {
-  display: inline-block;
-  width: 200px;
-  height: 204px;
-}
 
-#empty3 {
-  display: inline-block;
-  width: 200px;
-  height: 204px;
+
+
+}
+#row{
+  float: left;
 }
 footer{
   text-align: center;
